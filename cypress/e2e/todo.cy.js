@@ -1,22 +1,13 @@
-import { faker } from '@faker-js/faker';
 import TodoApi from '../api/todoApi';
 import userApi from '../api/userApi';
 import TodoPage from '../pages/todoPage';
 import NewTodoPage from '../pages/newTodoPage';
+import UserApi from '../api/userApi';
 
 describe("todo test cases" , () => {
     let token;
     beforeEach(()=>{
-        cy.request({
-            url: "/api/v1/users/register",
-            method : "POST",
-            body: {
-                firstName: faker.person.firstName(),
-                lastName: faker.person.lastName(),
-                email: faker.internet.email(),
-                password: faker.internet.password()
-            }
-        }).then(response => {
+        UserApi.register().then(response => {
             token = response.body.access_token;
         })
     })
