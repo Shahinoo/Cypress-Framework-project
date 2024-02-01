@@ -1,0 +1,19 @@
+{
+  "name": "cypress-framework-project",
+  "version": "1.0.0",
+  "description": "Cypress todo framework complete project",
+  "main": "index.js",
+  "scripts": {
+    "test:prod": "npx cypress run --e2e",
+    "test:report": "npx cypress run --record --key 90a0d6ac-0dfa-4270-9ebb-7851c40ff6eb"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "cypress": "^13.6.4"
+  },
+  "devDependencies": {
+    "@faker-js/faker": "^8.4.0"
+  }
+}
