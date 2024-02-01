@@ -7,10 +7,14 @@ on:
 jobs:
   test:
     runs-on: macos-latest
+    strategy:
+        matrix:
+          containers: [1,2]
     steps:
       - uses: actions/checkout@v4
       - uses: cypress-io/github-action@v6
         with:
             record: true
+            parallel: true
         env:
           CYPRESS_RECORD_KEY: 90a0d6ac-0dfa-4270-9ebb-7851c40ff6eb
